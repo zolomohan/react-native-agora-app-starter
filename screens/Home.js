@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -7,14 +7,20 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
+
 export default function Home() {
+  const navigation = useNavigation();
   const [joinChannel, setJoinChannel] = useState('');
+
+  const createLive = () => navigation.navigate('Live', { type: 'create' });
+  const joinLive = () => navigation.navigate('Live', { type: 'join' });
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Livestream App</Text>
       <View style={styles.createContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={createLive}>
           <Text style={styles.buttonText}>Start</Text>
         </TouchableOpacity>
       </View>
@@ -26,9 +32,10 @@ export default function Home() {
           style={styles.joinChannelInput}
         />
         <TouchableOpacity
+          onPress={joinLive}
           style={[
             styles.button,
-            {backgroundColor: joinChannel === '' ? '#555555' : '#78b0ff'},
+            { backgroundColor: joinChannel === '' ? '#555555' : '#78b0ff' },
           ]}
           disabled={joinChannel === ''}>
           <Text style={styles.buttonText}>Join</Text>
