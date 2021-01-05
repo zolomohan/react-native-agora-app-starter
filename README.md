@@ -1,4 +1,4 @@
-# React Native Agora Livestream
+# React Native Agora Livestream Application
 
 This is the starter code for the [React Native Livestream Application using Agora](https://zolomohan.hashnode.dev/react-native-agora-livestream-app).
 
