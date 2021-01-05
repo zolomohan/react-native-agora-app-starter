@@ -1,3 +1,7 @@
+# React Native Agora Livestream
+
+This is the starter code for the [React Native Livestream Application using Agora](https://zolomohan.hashnode.dev/react-native-agora-livestream-app).
+
 To clone the repository, run
 
 ```bash
